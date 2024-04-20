@@ -70,8 +70,13 @@ router.post('/login', async (req, res) => {
   }
 });
 
+
+
 router.post('/logout', async (req, res) => {
-  req.session.destroy();
+  console.log('logout method');
+  if (req.session) {
+    req.session.destroy();
+  }
   res.clearCookie('token');
   res.redirect('/login');
 });

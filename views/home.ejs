@@ -59,10 +59,15 @@
 </ul>
 
 
+
+
 <form method="post" action="/add">
   <input type="text" name="title" required>
   <button type="submit">Add Task</button>
 </form>
+<div>
+  <button onclick="logout()">logout</button>
+</div>
 
 <script>
   async function addTask(event) {
@@ -110,4 +115,24 @@
     console.log('Update successful:', data);
     window.location.reload();
   }
+
+  async function logout() {
+    console.log(" logout post")
+  try {
+    const response = await fetch('/logout', {
+      method: 'POST' // Might be GET depending on your backend implementation
+    });
+
+    if (!response.ok) {
+      throw new Error('Logout failed');
+    }
+    window.location.href = '/login';
+  } catch (error) {
+    console.error('Logout error:', error);
+    // Handle logout error gracefully (e.g., display an error message to the user)
+  }
+}
+
+
+ 
 </script>

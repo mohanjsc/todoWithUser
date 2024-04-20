@@ -64,11 +64,4 @@ app.use("/", verifyToken, task);
 app.listen(9011, () => console.log("Server has started on Port: 9011"));
 
 
-/* 
-chap 13, api, crud express.application
-w3 schools on mongodb, 
-chapter 5 cookies, session, security
 
-chapter 17 devops, basics, dna
-
-*/
